@@ -1,0 +1,17 @@
+#
+# actindo
+#
+# allow php files in this directory
+#
+<Files *.xml>
+Order Deny,Allow
+Deny from all
+</Files>
+<Files *.php>
+Order Allow,Deny
+Allow from all
+</Files>
+<Files *.html>
+Order Deny,Allow
+Deny from all
+</Files>
