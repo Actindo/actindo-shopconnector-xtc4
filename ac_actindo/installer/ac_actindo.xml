@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xtcommerceplugin>
+  <title>actindo</title>
+  <version>1.0.0</version>
+  <code>ac_actindo</code>
+  <url>http://www.actindo.de/</url>
+  <description>actindo Shop-ERP</description>
+  <icon>actindo_logo.jpg</icon>
+  <type>erp</type>
+
+  <db_install>
+<![CDATA[
+$db->Execute("INSERT INTO ".TABLE_ADMIN_NAVIGATION." (`pid`, `text`, `icon`, `url_i`, `url_d`, `sortorder`, `parent`, `type`, `navtype`, `cls`, `handler`, `iconCls`) VALUES (NULL, 'ac_actindo','../plugins/ac_actindo/images/actindo-16x16.png',NULL,'../plugins/ac_actindo/startpage.php',NULL,'0','I','N',NULL,'clickHandler2',NULL); ");
+]]>
+  </db_install>
+  <db_uninstall>
+<![CDATA[
+$db->Execute("DELETE FROM ".TABLE_ADMIN_NAVIGATION." WHERE text = 'ac_actindo'");
+]]>
+  </db_uninstall>
+
+  <configuration>
+    <config>
+      <key>ACTINDO_MAND_ID</key>
+      <type>textfield</type>
+      <required>false</required>
+      <value></value>
+      <de>
+        <title>actindo Kundennummer</title>
+        <description>
+<![CDATA[
+          Geben Sie hier Ihre actindo Kundennummer ein<br>Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!
+]]>
+        </description>
+      </de>
+      <en>
+        <title>actindo Kundennummer</title>
+        <description>
+<![CDATA[
+          Geben Sie hier Ihre actindo Kundennummer ein<br>Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!
+]]>
+        </description>
+      </en>
+    </config>
+    <config>
+      <key>ACTINDO_USERNAME</key>
+      <type>textfield</type>
+      <required>false</required>
+      <value></value>
+      <de>
+        <title>actindo Benutzername</title>
+        <description>
+<![CDATA[
+          Geben Sie hier Ihren actindo Benutzernamen ein<br>Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!
+]]>
+        </description>
+      </de>
+      <en>
+        <title>actindo Benutzername</title>
+        <description>
+<![CDATA[
+          Geben Sie hier Ihren actindo Benutzernamen ein<br>Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!
+]]>
+        </description>
+      </en>
+    </config>
+    <config>
+      <key>ACTINDO_PASSWORD</key>
+      <type>hidden</type>
+      <required>false</required>
+      <value></value>
+      <de>
+        <title>actindo Passwort</title>
+        <description>
+<![CDATA[
+          Geben Sie hier Ihr actindo Passwort ein<br>Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!
+]]>
+        </description>
+      </de>
+      <en>
+        <title>actindo Passwort</title>
+        <description>
+<![CDATA[
+          Geben Sie hier Ihr actindo Passwort ein<br>Einen 14-t&auml;gigen, kostenlosen Testzugang k&ouml;nnen Sie <a href="http://www.xt-commerce.com/index.php?option=com_philaform&form_id=3&Itemid=1" target="_new">[HIER]</a> anfordern!
+]]>
+        </description>
+      </en>
+    </config>
+    <config>
+      <key>ACTINDO_TOKEN</key>
+      <type>hidden</type>
+      <required>false</required>
+      <value></value>
+      <de>
+        <title>actindo Token</title>
+        <description></description>
+      </de>
+      <en>
+        <title>actindo Token</title>
+        <description></description>
+      </en>
+    </config>
+    <config>
+      <key>ACTINDO_SID</key>
+      <type>hidden</type>
+      <required>false</required>
+      <value></value>
+      <de>
+        <title>actindo SID</title>
+        <description></description>
+      </de>
+      <en>
+        <title>actindo SID</title>
+        <description></description>
+      </en>
+    </config>
+    <config>
+      <key>ACTINDO_SHOP_ID</key>
+      <type>hidden</type>
+      <required>false</required>
+      <value></value>
+      <de>
+        <title>actindo Shop-ID</title>
+        <description></description>
+      </de>
+      <en>
+        <title>actindo Shop-ID</title>
+        <description></description>
+      </en>
+    </config>
+  </configuration>
+
+  <language_content>
+    <phrase>
+      <key>TEXT_AC_ACTINDO</key>
+      <class>admin</class>
+      <de>
+        <value>actindo Shop-ERP</value>
+      </de>
+      <en>
+        <value>actindo Shop-ERP</value>
+      </en>
+    </phrase>
+  </language_content>
+
+</xtcommerceplugin>
