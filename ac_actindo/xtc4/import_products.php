@@ -398,13 +398,14 @@ function _do_import_descriptions( &$product, &$p, $force_texts=TRUE )
 function _do_import_images( &$product, &$p )
 {
   $warning = array();
-
+  $cnt = 1;
   if( is_array($product['shop']['images']) && count($product['shop']['images']) )
   {
     $media_images = new MediaImages();
     foreach( $product['shop']['images'] as $num => $image )
     {
-      $image['image_name'] = preg_replace('/[^a-zA-Z0-9_\.]/', '_', basename($image['image_name']));
+      $image['image_name'] = $cnt.preg_replace('/[^a-zA-Z0-9_\.]/', '_', basename($image['image_name']));
+	  $cnt++;
       $imagesize = strlen($image['image']);
       $errprefix = sprintf( "Bild %d: ", $num );
 
