@@ -333,7 +333,8 @@ function import_product( $product )
   {
     $warning = array_merge( $res['warning'], $warning );
   }
-
+  // for some reason the products_status isnt saved (eventhough correctly set in $p1), set manually
+  act_db_query(sprintf('UPDATE `%s` SET `products_status` = %d WHERE `products_id` = %d', TABLE_PRODUCTS, (int)$product['shop']['art']['products_status'], $products_id));
 
   $success++;
   return array( 'ok' => TRUE, 'success' => $success, 'warning' => $warning );
