@@ -333,7 +333,8 @@ function import_product( $product )
   {
     $warning = array_merge( $res['warning'], $warning );
   }
-
+  // for some reason the products_status isnt saved (eventhough correctly set in $p1), set manually
+  act_db_query(sprintf('UPDATE `%s` SET `products_status` = %d WHERE `products_id` = %d', TABLE_PRODUCTS, (int)$product['shop']['art']['products_status'], $products_id));
 
   $success++;
   return array( 'ok' => TRUE, 'success' => $success, 'warning' => $warning );
@@ -398,13 +399,14 @@ function _do_import_descriptions( &$product, &$p, $force_texts=TRUE )
 function _do_import_images( &$product, &$p )
 {
   $warning = array();
-
+  $cnt = 1;
   if( is_array($product['shop']['images']) && count($product['shop']['images']) )
   {
     $media_images = new MediaImages();
     foreach( $product['shop']['images'] as $num => $image )
     {
-      $image['image_name'] = preg_replace('/[^a-zA-Z0-9_\.]/', '_', basename($image['image_name']));
+      $image['image_name'] = $cnt.preg_replace('/[^a-zA-Z0-9_\.]/', '_', basename($image['image_name']));
+	  $cnt++;
       $imagesize = strlen($image['image']);
       $errprefix = sprintf( "Bild %d: ", $num );
 
