@@ -600,11 +600,11 @@ function act_shop_get_capabilities()
     'artikel_shippingtime' =>1,
     'artikel_properties' => 1,
     'artikel_property_sets' => 1,
-    'artikel_contents' => 1,
+    'artikel_contents' => 0,
     'artikel_attributsartikel' => 1,    // Attributs-Kombinationen werden tatsächlich eigene Artikel
     'wg_sync' => 1,
     'multi_livelager' => 1,
-//    'artikel_list_filters' => 1,  // ????
+//  'artikel_list_filters' => 1,  // ????
   );
 }
 
