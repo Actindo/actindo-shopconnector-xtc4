@@ -168,12 +168,12 @@ function export_orders_list( $filters=array(), $from=0, $count=0x7FFFFFFF )
     }
 
     $verfmap = array(
-      'xt_banktransfer' => 'L',
       'xt_invoice' => 'U',
       'xt_paypal' => 'PP',
       'xt_sofortueberweisung' => 'SU',
       'xt_moneybookers_cc' => 'KK',
       'xt_cashondelivery' => 'NN',
+      'xt_banktransfer'=>'LSCORE',
     );
 
     $actindoorder['customer']['verf'] = $verfmap[$order['payment_code']];
@@ -247,12 +247,10 @@ function _export_payment( $orders_id, $payment_method, &$actindoorder, $order, $
   switch( strtolower($payment_method) )
   {
     case 'xt_banktransfer':
-      $actindoorder['customer']['kto'] = $data['banktransfer_number'];
-      $actindoorder['customer']['blz'] = $data['banktransfer_blz'];
+      $actindoorder['customer']['iban'] = $data['banktransfer_iban'];
+      $actindoorder['customer']['swift'] = $data['banktransfer_bic'];
       $actindoorder['customer']['bankname'] = $data['banktransfer_bank_name'];
       $actindoorder['customer']['kto_inhaber'] = $data['banktransfer_owner'];
-      $actindoorder['customer']['iban'] = $data['banktransfer_iban'];
-      $actindoorder['customer']['swiftcode'] = $data['banktransfer_bic'];
       return TRUE;
   }
 
