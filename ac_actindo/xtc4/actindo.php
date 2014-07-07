@@ -11,7 +11,7 @@
  * @copyright Copyright (c) 2007, Patrick Prasse (Schneebeerenweg 26, D-85551 Kirchheim, GERMANY, pprasse@actindo.de)
 */
 
-define( 'ACTINDO_SHOPCONN_REVISION', '$Revision: 516 $' );
+define( 'ACTINDO_SHOPCONN_REVISION', '$Revision: 517 $' );
 define( 'ACTINDO_PROTOCOL_REVISION', '2.'.substr( ACTINDO_SHOPCONN_REVISION, 11, -2 ) );
 
 
