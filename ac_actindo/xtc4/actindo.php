@@ -7,11 +7,11 @@
  *
  * @package actindo
  * @author  Patrick Prasse <pprasse@actindo.de>
- * @version $Revision: 516 $
+ * @version $Revision: 518 $
  * @copyright Copyright (c) 2007, Patrick Prasse (Schneebeerenweg 26, D-85551 Kirchheim, GERMANY, pprasse@actindo.de)
 */
 
-define( 'ACTINDO_SHOPCONN_REVISION', '$Revision: 517 $' );
+define( 'ACTINDO_SHOPCONN_REVISION', '$Revision: 518 $' );
 define( 'ACTINDO_PROTOCOL_REVISION', '2.'.substr( ACTINDO_SHOPCONN_REVISION, 11, -2 ) );
 
 

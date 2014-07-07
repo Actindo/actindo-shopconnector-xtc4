@@ -372,11 +372,20 @@ function get_dropdown_data_non_json( $get )
 			$result = $dropdown->getTemplateSets();
 			break;
 		default:
-
-//    var_dump($xtPlugin->PluginCode('admin_dropdown.php:dropdown'));
+            if(is_file($adminHandlerFile = SHOP_BASEDIR._SRV_WEB_FRAMEWORK.'admin/classes/class.ExtFunctions.php')) {
+                require_once($adminHandlerFile);
+            }
+            if(is_file($adminHandlerFile = SHOP_BASEDIR._SRV_WEB_FRAMEWORK.'admin/classes/class.ExtEditForm.php')) {
+                require_once($adminHandlerFile);
+            }
+            if(is_file($adminHandlerFile = SHOP_BASEDIR._SRV_WEB_FRAMEWORK.'admin/classes/class.ExtGrid.php')) {
+                require_once($adminHandlerFile);
+            }
+            if(is_file($adminHandlerFile = SHOP_BASEDIR._SRV_WEB_FRAMEWORK.'admin/classes/class.ExtAdminHandler.php')) {
+                require_once($adminHandlerFile);
+            }
+            
 			($plugin_code = $xtPlugin->PluginCode('admin_dropdown.php:dropdown')) ? eval($plugin_code) : false;
-//			if($plugin_return_value)
-//			return $plugin_return_value;
 	}
 
   ob_end_clean();
